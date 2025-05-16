@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhận Dạng Con Vật - YOLOv8</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .upload-form {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .btn-upload {
+            background-color: #007bff;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Nhận Dạng Con Vật Sử Dụng YOLOv8</h1>
+        <p class="text-center">Tải lên hình ảnh hoặc video để nhận dạng các con vật trong đó.</p>
+        {% if message %}
+        <div class="alert alert-warning text-center mt-3">{{ message }}</div>
+        {% endif %}
+        <div class="upload-form">
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="file" class="form-label">Chọn tệp:</label>
+                    <input type="file" class="form-control" id="file" name="file" accept="image/*" multiple>
+                </div>
+                <button type="submit" class="btn btn-upload">Tải Lên</button>
+            </form>
+        </div>
+        <h3>Các đối tượng mà hệ thống có thể nhận diện:</h3>
+        <p>
+person (người), bicycle (xe đạp), car (xe hơi), motorcycle (xe máy), airplane (máy bay), bus (xe buýt), train (tàu hỏa), truck (xe tải), boat (thuyền), traffic light (đèn giao thông), fire hydrant (trụ cứu hỏa), stop sign (biển dừng), parking meter (đồng hồ đỗ xe), bench (ghế băng), bird (chim), cat (mèo), dog (chó), horse (ngựa), sheep (cừu), cow (bò), elephant (voi), bear (gấu), zebra (ngựa vằn), giraffe (hươu cao cổ), backpack (ba lô), umbrella (ô/dù), handbag (túi xách), tie (cà vạt), suitcase (vali), frisbee (đĩa ném), skis (ván trượt tuyết), snowboard (ván trượt tuyết), sports ball (bóng thể thao), kite (diều), baseball bat (gậy bóng chày), baseball glove (găng bóng chày), skateboard (ván trượt), surfboard (ván lướt sóng), tennis racket (vợt tennis), bottle (chai), wine glass (ly rượu), cup (cốc), fork (nĩa), knife (dao), spoon (muỗng), bowl (bát), banana (chuối), apple (táo), sandwich (bánh sandwich), orange (cam), broccoli (bông cải xanh), carrot (cà rốt), hot dog (xúc xích kẹp bánh mì), pizza (bánh pizza), donut (bánh donut), cake (bánh ngọt), chair (ghế), couch (ghế sofa), potted plant (cây trồng chậu), bed (giường), dining table (bàn ăn), toilet (bồn cầu), tv (tivi), laptop (máy tính xách tay), mouse (chuột máy tính), remote (điều khiển), keyboard (bàn phím), cell phone (điện thoại), microwave (lò vi sóng), oven (lò nướng), toaster (máy nướng bánh mì), sink (bồn rửa), refrigerator (tủ lạnh), book (sách), clock (đồng hồ), vase (bình hoa), scissors (kéo), teddy bear (gấu bông), hair drier (máy sấy tóc), toothbrush (bàn chải đánh răng).
+        </p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
