@@ -9,7 +9,7 @@ app.config['RESULT_FOLDER'] = 'static/results'
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 os.makedirs(app.config['RESULT_FOLDER'], exist_ok=True)
 
-model = YOLO('yolov8x.pt')
+model = YOLO('yolov8s.pt')
 
 @app.route('/')
 def index():
